@@ -1,0 +1,48 @@
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+<form action="/comite/update/<%=comite.id%>" method="POST" class="form-ingreso">
+	<h3 align="center">EDITAR DATOS DE MIEMBRO DE COMITE EVALUADOR</h3>	
+	<div>
+	<label>Nombre</label>
+	<input type="text" name="nombre" class="form-control" value="<%=comite.nombre%>" required>
+	</div>
+	<div>
+	<label>Apellido Paterno</label>
+	<input type="text" name="apellido_paterno" class="form-control" value="<%=comite.apellido_paterno%>" required>
+	</div>
+	<div>
+	<label>Apellido Materno</label>
+	<input type="text" name="apellido_materno" class="form-control" value="<%=comite.apellido_materno%>" required>
+	</div>
+	<div>
+	<label>Email</label>
+	<input type="text" name="email" class="form-control" value="<%=comite.email%>" required>
+	</div>
+	<div>
+	<label>Telefono</label>
+	<input type="text" name="telefono" class="form-control" value="<%=comite.telefono%>" required>
+	</div>
+	<label>Area</label>
+	<select name="area" class="form-control" value="<%=comite.area%>">
+	    <option>Seleccionar</option>
+		<option value="Matematicas">Matematicas</option>
+ 		<option value="Quimica">Quimica</option>
+  		<option value="Fisica">Fisica</option>
+	</select>
+	<div>
+		
+	</div>
+	</br>
+
+	<div align="center">
+	<button type="submit" class="btn btn-primary">
+		 Guardar
+	</button>
+	</div>
+</form>	
+</div>
+</div>

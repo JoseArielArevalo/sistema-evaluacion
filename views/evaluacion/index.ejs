@@ -1,0 +1,27 @@
+<div class="container">
+	<div align="center"><h2>Preguntas de Evaluacion</h2></div>
+	
+	<table class="table table-hover" >
+		<th>Pregunta</th>
+		<th>Area de Evaluacion</th>
+		<th colspan="2" class="text-center">Acciones</th>
+		<% _.each(evaluaciones, function(evaluacion) { %>
+		<tr>
+			<td><%=evaluacion.pregunta%></td>
+			<td><%=evaluacion.area%></td>
+			<td>
+				<a href="/evaluacion/show/<%=evaluacion.id%>" class="btn btn-success btn-sm ">Ver Detalles</a>
+			</td>
+			<td>
+				<form action="/evaluacion
+				/destroy/<%= evaluacion.id%>" method="POST" accept-charset="utf-8">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit"  class="btn btn-sm btn-danger" value="Eliminar"/>
+					<input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+				</form>
+			</td>
+		</tr>
+		<%})%>
+	</table>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="container">
+<form action="/evaluacion/create" method="POST" class="form-ingreso">
+	<h3 align="center">REGISTRO DE EVALUACION</h3>
+	<div>
+	<label>Pregunta</label>
+	<input type="text" autocomplete="off" placeholder="ingrese pregunta" name="pregunta" class="form-control" required>
+	</div>
+
+	<div>
+	<label>Area</label>
+	<select name="area" class="form-control">
+	    <option>Seleccionar</option>
+		<option value="Matematicas">Matematicas</option>
+ 		<option value="Quimica">Quimica</option>
+  		<option value="Fisica">Fisica</option>
+	</select>
+	</div>
+		
+	</br>
+	<div align="center">
+	<button type="submit" class="btn btn-primary">
+		 Crear
+	</button>
+	</div>
+</form>	
+</div>

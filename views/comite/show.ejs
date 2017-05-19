@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>Detalle de Miembro de Comite</h4>
+			</div>
+			<div class="panel-body">
+				
+				
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td><strong>Nombre</strong></td>
+						<td><%= comite.nombre %></td>
+					</tr>
+					<tr>
+						<td><strong>Apellidos</strong></td>
+						<td><%= comite.apellido_paterno %> <%= comite.apellido_materno %></td>
+					</tr>
+					<tr>
+						<td><strong>Email</strong></td>
+						<td><%= comite.email %></td>
+					</tr>
+					<tr>
+						<td><strong>Telefono</strong></td>
+						<td><%= comite.telefono %></td>
+					</tr>
+					<tr>
+						<td><strong>Area de Evaluacion</strong></td>
+						<td><%= comite.area %></td>
+					</tr>
+					
+				</table>
+				<div class="col-md-6 col-md-offset-3" >
+				<div class="btn-group" align="center" role="group">
+					<div class="col-md-4">
+					<form action="/comite/edit/<%=comite.id %>" method="POST">
+						<button type="submit" class="btn btn-success">Editar</button>		
+					</form>
+					</div>
+					<div class="col-md-4">
+					<form action="/comite
+						/destroy/<%= comite.id%>" method="POST" accept-charset="utf-8">
+						<input type="hidden" name="_method" value="delete"/>
+						<input type="submit"  class="btn btn-sm btn-danger" value="Eliminar"/>
+						<input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+					</form>
+					</div>
+
+					<div class="col-md-4">					
+					<a href="/comite/index" 
+						class="btn btn-primary">
+						<i class="material-icons"></i> Salir
+					</a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

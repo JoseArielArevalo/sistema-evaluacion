@@ -1,0 +1,45 @@
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+<form action="/comite/create" method="POST" class="form-ingreso">
+	<h3 align="center">FORMULARIO REGISTRO DE COMITE EVALUADOR</h3>	
+	<div>
+	<label>Nombre</label>
+	<input type="text" name="nombre" class="form-control" required>
+	</div>
+	<div>
+	<label>Apellido Paterno</label>
+	<input type="text" name="apellido_paterno" class="form-control" required>
+	</div>
+	<div>
+	<label>Apellido Materno</label>
+	<input type="text" name="apellido_materno" class="form-control" required>
+	</div>
+	<div>
+	<label>Email</label>
+	<input type="text" name="email" class="form-control" required>
+	</div>
+	<div>
+	<label>Telefono</label>
+	<input type="text" name="telefono" class="form-control" required>
+	</div>
+	<label>Area de Evaluacion</label>
+	<select name="area" class="form-control">
+	    <option>Seleccionar</option>
+		<option value="Matematicas">Matematicas</option>
+ 		<option value="Quimica">Quimica</option>
+  		<option value="Fisica">Fisica</option>
+	</select>
+	<div>
+		
+	</div>
+	</br>
+
+	<div align="center">
+	<button type="submit" class="btn btn-primary">
+		 Crear
+	</button>
+	</div>
+
+</form>
+</div>	
+</div>

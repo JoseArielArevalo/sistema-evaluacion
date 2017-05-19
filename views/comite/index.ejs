@@ -1,0 +1,32 @@
+
+<div class="container">
+	<div align="center"><h2>Comite Evaluador</h2></div>
+	
+	<table class="table table-hover" >
+		<th>Nombre</th>
+		<th>Apellidos</th>
+		<th>Email</th>
+		<th>Area de Evaluacion</th>
+		<th colspan="2" class="text-center">Acciones</th>
+		<% _.each(comites, function(comite) { %>
+		<tr>
+			<td><%=comite.nombre%></td>
+			<td><%=comite.apellido_paterno%> <%=comite.apellido_materno%></td>
+			<td><%=comite.email%></td>
+			<td><%=comite.area%></td>
+			<td>
+				<a href="/comite/show/<%=comite.id%>" class="btn btn-success btn-sm ">Ver Detalles</a>
+
+			</td>
+			<td>
+				<form action="/comite
+				/destroy/<%= comite.id%>" method="POST" accept-charset="utf-8">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit"  class="btn btn-sm btn-danger" value="Eliminar"/>
+					<input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+				</form>
+			</td>
+		</tr>
+		<%})%>
+	</table>
+</div>
