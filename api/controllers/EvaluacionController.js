@@ -27,16 +27,6 @@ module.exports = {
 		})
 	},
 
-	show:function(req,res,next){
-		Evaluacion.findOne(req.param('id'), function evaluacionFounded(err,evaluacion){
-			if(err)
-				return next(err);
-			res.view({
-				evaluacion: evaluacion
-			});
-		});
-	},
-
     index:function(req,res,next){
 		Evaluacion.find(function evaluacionFounded(err,evaluaciones){
 			if(err){
@@ -47,7 +37,46 @@ module.exports = {
 				evaluaciones:evaluaciones
 			});
 		});
-	}
+	},
+
+	destroy:function(req, res, next) {
+        Evaluacion.destroy(req.param('id'), function evaluacionDestroyed (err) {
+            if(err){
+                console.log(err);
+                return next(err);
+            }
+            res.redirect('/evaluacion/index');
+        });
+    },
+
+    edit:function(req,res,next){
+		Evaluacion.findOne(req.param('id'), function evaluacionFounded(err,evaluacion){
+			if(err)
+				return next(err);
+			if(!evaluacion)
+				return next();
+			res.view({
+				evaluacion: evaluacion
+			});
+		});
+	},
+	update:function(req,res,next){
+		var comiteObj={
+			pregunta: req.param('pregunta'),		
+			area: req.param('area')
+		}
+		Evaluacion.update(req.param('id'),comiteObj, function evaluacionUpdate(err,evaluacion){
+			if(err){
+				req.session.flash = {
+					err: err
+				}
+				return res.redirect('evaluacion/edit/'+ req.param('id'));
+			}
+
+			res.redirect('/evaluacion/index');
+		});
+	},
+
 
 };
 

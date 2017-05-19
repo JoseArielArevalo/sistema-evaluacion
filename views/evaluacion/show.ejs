@@ -5,12 +5,12 @@
 		<th>Pregunta</th>
 		<th>Area de Evaluacion</th>
 		<th colspan="2" class="text-center">Acciones</th>
-		<% _.each(evaluacion, function(evaluacion) { %>
+		<% _.each(evaluaciones, function(evaluacion) { %>
 		<tr>
 			<td><%=evaluacion.pregunta%></td>
-			<td><%=comite.area%></td>
+			<td><%=evaluacion.area%></td>
 			<td>
-				<a href="/evaluacion/show/<%=comite.id%>" class="btn btn-success btn-sm ">Ver Detalles</a>
+				<a href="/evaluacion/edit/<%=evaluacion.id%>" class="btn btn-success btn-sm ">Editar</a-->
 			</td>
 			<td>
 				<form action="/evaluacion

@@ -1,0 +1,31 @@
+
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+<form action="/evaluacion/update/<%=evaluacion.id%>" method="POST" class="form-ingreso">
+	<h3 align="center">EDITAR DATOS DE LAS PREGUNTAS DE EVALUACION</h3>	
+	<div>
+	<label>Pregunta</label>
+	<input type="text" name="pregunta" class="form-control" value="<%=evaluacion.pregunta%>" required>
+	</div>
+	<div>
+	
+	<label>Area</label>
+	<select name="area" class="form-control" value="<%=evaluacion.area%>">
+	    <option>Seleccionar</option>
+		<option value="Matematicas">Matematicas</option>
+ 		<option value="Quimica">Quimica</option>
+  		<option value="Fisica">Fisica</option>
+	</select>
+	<div>
+		
+	</div>
+	</br>
+
+	<div align="center">
+	<button type="submit" class="btn btn-primary">
+		 Guardar
+	</button>
+	</div>
+</form>	
+</div>
+</div>
